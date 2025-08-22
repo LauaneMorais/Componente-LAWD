@@ -10,25 +10,34 @@ body {
 .carrossel {
     position: relative;
     width: 100%;
-    max-width: 1200px; 
+    max-width: 1600px;
     margin: auto;
 }
 
 .container-dos-cards {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 30px;
+    padding:20px;
 }
 
 .card {
-    background-color: rgb(68, 15, 117);
+    background: radial-gradient(
+        ellipse at center,       
+        rgb(85, 26, 140) 0%,  
+        rgb(63, 12, 110) 50%,  
+        rgb(47, 5, 88) 100%   
+    );
     color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     text-align: center;
+    
+    min-width: 350px;
+    max-width: 400px;
 }
 
 .card img {
