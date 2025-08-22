@@ -7,6 +7,13 @@ body {
 }
 
 
+.carrossel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; 
+    margin: auto;
+}
+
 .container-dos-cards {
     display: flex;
     align-items: flex-start;
@@ -22,14 +29,12 @@ body {
     border-radius: 10px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     text-align: center;
-
 }
-
 
 .card img {
     width: 100%; 
-    max-width: 250px; /* Um limite pra a imagem não ficar colada nas bordas */
-    height: auto; /* Altura automática para manter a proporção */
+    max-width: 250px;
+    height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
     margin-top: 10px;
@@ -66,11 +71,116 @@ body {
 .descricao {
     overflow: hidden;
     max-height: 0; 
-
     transition: max-height 0.4s ease-out, margin-top 0.4s ease-out;
 }
 
 .descricao.visivel {
     max-height: 200px; 
     margin-top: 3px;
+}
+
+.seta-carrossel {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); 
+  background-color: rgba(129, 17, 144, 0.7);
+  border: 1px solid black; 
+  color: white;
+  border-radius: 50%; 
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10; 
+  transition: background-color 0.2s;
+}
+
+.seta-carrossel:hover {
+    background-color: rgba(129, 17, 144, 0.7);
+}
+
+.seta-carrossel.anterior {
+    left: -15px;
+}
+
+.seta-carrossel.proximo {
+    right: -10px;
+}
+
+@media (max-width: 425px){
+    
+
+    .seta-carrossel {
+        display: block;
+    }
+
+    .container-dos-cards {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow-x: scroll;
+      padding: 20px 0; 
+      gap: 0;
+    }
+    
+    .container-dos-cards::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .card{
+        flex: 0 0 85%;
+        min-height: 350px;
+        margin: 0 20px 0 20px;
+    }
+
+    #card-primeiro{
+        margin: 0;
+    }
+
+    #card-ultimo{
+        margin: 0;
+    }
+
+    .card p{
+        font-size: 0.75rem;
+    }
+
+    .card h2{
+        font-size: 1rem;
+    }
+
+    .card img{
+        width: 75%;
+        height: 220px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+
+
+    .container-dos-cards {
+        padding: 0 15px;
+        gap: 25px; 
+    }
+
+    .card {
+
+        flex: 1 1 50%;
+        max-width: none;
+        min-height: auto; 
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .card img {
+        max-width: 300px;
+        height: auto; 
+    }
 }
