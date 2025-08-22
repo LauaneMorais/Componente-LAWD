@@ -6,6 +6,10 @@ body {
     text-align: center;
 }
 
+#enzo {
+    width: 100;
+    height: 100;
+}
 
 .carrossel {
     position: relative;
